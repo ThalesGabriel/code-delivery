@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ThalesGabriel/code-delivery/domain/model"
+	"github.com/ThalesGabriel/code-delivery/simulator/domain/model"
 )
 
 type Route model.Route
@@ -30,7 +30,7 @@ func getCoordinate(data []string, which_coordinate int) (float64, error) {
 
 func (r *Route) LoadPositions() error {
 	if r.ClientId == "" {
-		errors.New("Route ID not informed")
+		return errors.New("Route ID not informed")
 	}
 
 	destination := "destinations/" + r.ClientId + ".txt"

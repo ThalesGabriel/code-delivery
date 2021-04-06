@@ -1,6 +1,6 @@
 FROM golang:1.16
 
-WORKDIR /go/src
+WORKDIR /go/src/simulator
 ENV PATH="/go/bin:${PATH}"
 
 RUN apt-get update && \

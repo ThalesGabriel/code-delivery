@@ -3,7 +3,7 @@ package model
 import (
 	"testing"
 
-	"github.com/ThalesGabriel/code-delivery/domain/model"
+	"github.com/ThalesGabriel/code-delivery/simulator/domain/model"
 	"github.com/stretchr/testify/require"
 )
 

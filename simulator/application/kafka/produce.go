@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	route2 "github.com/ThalesGabriel/code-delivery/application/route"
-	"github.com/ThalesGabriel/code-delivery/infra/kafka"
+	route2 "github.com/ThalesGabriel/code-delivery/simulator/application/route"
+	"github.com/ThalesGabriel/code-delivery/simulator/infra/kafka"
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 )
 

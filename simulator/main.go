@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	kafka2 "github.com/ThalesGabriel/code-delivery/application/kafka"
-	"github.com/ThalesGabriel/code-delivery/infra/kafka"
+	kafka2 "github.com/ThalesGabriel/code-delivery/simulator/application/kafka"
+	"github.com/ThalesGabriel/code-delivery/simulator/infra/kafka"
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/joho/godotenv"
 )
