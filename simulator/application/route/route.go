@@ -29,11 +29,11 @@ func getCoordinate(data []string, which_coordinate int) (float64, error) {
 }
 
 func (r *Route) LoadPositions() error {
-	if r.ClientId == "" {
+	if r.ID == "" {
 		return errors.New("Route ID not informed")
 	}
 
-	destination := "destinations/" + r.ClientId + ".txt"
+	destination := "destinations/" + r.ID + ".txt"
 	f, err := os.Open(destination)
 	if err != nil {
 		// fmt.Errorf("Could not open file: ", destination)
