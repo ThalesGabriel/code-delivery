@@ -8,7 +8,7 @@ import (
 )
 
 type Route struct {
-	ID        string     `json:"id"`
+	ID        string     `json:"routeId"`
 	ClientId  string     `json:"clientId"`
 	Positions []Position `json:"position"`
 	CreatedAt time.Time  `json:"createdAt"`

@@ -1,4 +1,4 @@
-module github.com/ThalesGabriel/code-delivery
+module github.com/ThalesGabriel/code-delivery/simulator
 
 go 1.16
 

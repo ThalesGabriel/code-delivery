@@ -2,12 +2,13 @@ package kafka
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 	"time"
 
-	route2 "github.com/ThalesGabriel/code-delivery/application/route"
-	"github.com/ThalesGabriel/code-delivery/infra/kafka"
+	route2 "github.com/ThalesGabriel/code-delivery/simulator/application/route"
+	"github.com/ThalesGabriel/code-delivery/simulator/infra/kafka"
 	ckafka "github.com/confluentinc/confluent-kafka-go/kafka"
 )
 
@@ -20,14 +21,16 @@ func Produce(msg *ckafka.Message) {
 	producer := kafka.NewKafkaProducer()
 	route := route2.NewRoute()
 	json.Unmarshal(msg.Value, &route)
+	fmt.Println(route)
 	route.LoadPositions()
 	positions, err := route.ExportJsonPositions()
-
+	fmt.Println(positions)
 	if err != nil {
 		log.Println(err.Error())
 	}
 	for _, p := range positions {
 		kafka.Publish(p, os.Getenv("KafkaProduceTopic"), producer)
+		fmt.Println(p)
 		time.Sleep(time.Millisecond * 500)
 	}
 }
