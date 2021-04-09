@@ -4,7 +4,6 @@ import (
 	"time"
 
 	validator "github.com/asaskevich/govalidator"
-	uuid "github.com/satori/go.uuid"
 )
 
 type PartialRoutePosition struct {
@@ -23,9 +22,9 @@ func (partialRoutePosition *PartialRoutePosition) isValid() error {
 	return nil
 }
 
-func NewPartialRoutePosition(clientId string, positions []float64, finished bool) (PartialRoutePosition, error) {
+func NewPartialRoutePosition(ID, clientId string, positions []float64, finished bool) (PartialRoutePosition, error) {
 	partialRoutePosition := PartialRoutePosition{
-		ID:        uuid.NewV4().String(),
+		ID:        ID,
 		ClientId:  clientId,
 		Positions: positions,
 		Finished:  finished,

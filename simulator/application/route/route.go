@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -79,7 +80,8 @@ func (r *Route) ExportJsonPositions() ([]string, error) {
 		if total-1 == key {
 			finished = true
 		}
-		route, err := model.NewPartialRoutePosition(clientId, position, finished)
+		fmt.Println("opa", clientId)
+		route, err := model.NewPartialRoutePosition(r.ID, clientId, position, finished)
 		if err != nil {
 			return nil, err
 		}
